@@ -6,7 +6,7 @@ type FlightAttributes = {
   number: number,
   origin: string,
   destination: string,
-  flight: string,
+  airline: string,
   duration: string,
   distance: string,
   price: number
@@ -19,7 +19,7 @@ export const Flight = (dbService: Sequelize, sequelize: SequelizeStatic) => {
     number: {type: sequelize.INTEGER},
     origin: {type: sequelize.STRING(50)},
     destination: {type: sequelize.STRING(50)},
-    flight: {type: sequelize.STRING(50)},
+    airline: {type: sequelize.STRING(50)},
     duration: {type: sequelize.INTEGER},
     distance: {type: sequelize.INTEGER},
     price: {type: sequelize.INTEGER}
