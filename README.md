@@ -1,4 +1,4 @@
-# Typescript Template 
+# Flights Manager
 
 ## Rules and description of service structure
 
