@@ -1,0 +1,80 @@
+{
+  "description": "Flights",
+  "scripts": {
+    "precommit": "lint-staged",
+    "prebuild": "rm -rf ./dist && mkdir dist",
+    "start": "tsc && NODE_PATH=./dist node ./src/bin/www",
+    "dev": "NODE_PATH=./dist nodemon -e ts,js -w src --exec 'tsc && node ./src/bin/www'",
+    "test": "jest",
+    "lint": "tslint --fix -p .",
+    "check": "prettier --parser typescript --write src/**/*.ts && yarn run lint",
+    "test:unit": "jest \\.spec\\.ts?$",
+    "test:comp": "jest \\.test\\.ts?$",
+    "test:mock": "yarn run mockapi -- --test",
+    "test:watch": "jest --watch --notify",
+    "test:cover": "./tools/test-cover.sh"
+  },
+  "author": "Eduard Simonyan",
+  "license": "ISC",
+  "lint-staged": {
+    "src/**/*.ts": [
+      "prettier --parser typescript --write",
+      "tslint --fix -p .",
+      "git add"
+    ],
+    "typings/**/*.ts": [
+      "prettier --parser typescript --write",
+      "tslint --fix -p .",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run precommit"
+    }
+  },
+  "dependencies": {
+    "body-parser": "1.18.3",
+    "bunyan": "1.8.12",
+    "cookie-parser": "1.4.3",
+    "debug": "4.1.0",
+    "dotenv": "6.2.0",
+    "express": "4.16.4",
+    "express-bunyan-logger": "1.3.3",
+    "express-validation": "1.0.2",
+    "joi": "14.3.0",
+    "sequelize": "4.44.3",
+    "tedious": "5.0.3"
+  },
+  "devDependencies": {
+    "@types/sequelize": "4.28.1",
+    "@types/body-parser": "1.17.0",
+    "@types/bunyan": "1.8.5",
+    "@types/dotenv": "6.1.0",
+    "@types/express": "4.16.0",
+    "@types/express-bunyan-logger": "1.3.0",
+    "@types/express-session": "1.15.11",
+    "@types/jest": "24.0.13",
+    "@types/joi": "14.0.1",
+    "@types/node": "10.12.14",
+    "@types/supertest": "2.0.7",
+    "@types/validator": "10.11.3",
+    "bunyan-format": "0.2.1",
+    "husky": "2.3.0",
+    "jest": "24.8.0",
+    "joi-to-swagger": "3.1.0",
+    "lint-staged": "8.1.0",
+    "merge-deep": "3.0.2",
+    "node-mocks-http": "1.7.3",
+    "nodemon": "1.18.8",
+    "prettier": "1.15.3",
+    "supertest": "3.3.0",
+    "ts-jest": "24.0.2",
+    "tslint": "5.11.0",
+    "tslint-config-prettier": "1.17.0",
+    "tslint-config-security": "1.13.0",
+    "tslint-eslint-rules": "5.4.0",
+    "typescript": "3.5.1",
+    "yamljs": "0.3.0"
+  }
+}

@@ -1,0 +1,21 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+dist/
+
+# Environmental variables
+.env
+
+# Dependencies
+node_modules/
+
+# System folders
+.idea/
+.DS_Store
+
+# Logs
+*.log
+
+# Test coverage
+coverage
+
+# Docker file
+Dockerfile

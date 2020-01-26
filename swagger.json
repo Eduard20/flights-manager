@@ -1,0 +1,254 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Flights APIs",
+    "description": "This is the list of endpoints for flights service",
+    "version": "1.0.0"
+  },
+  "host": "localhost:3000",
+  "basePath": "/api/v1",
+  "schemes": [
+    "https"
+  ],
+  "servers": [
+    {
+      "url": "http://localhost:3000/api/v1",
+      "description": "Local server"
+    }
+  ],
+  "tags": [
+    {
+      "name": "api",
+      "description": "Flights API routes"
+    },
+    {
+      "name": "health",
+      "description": "Flights API health"
+    }
+  ],
+  "paths": {
+    "/health": {
+      "get": {
+        "summary": "Health-check endpoint",
+        "tags": [
+          "health"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Content-Type"
+          },
+          {
+            "$ref": "#/components/parameters/Accept"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/health"
+          }
+        }
+      }
+    },
+    "/flights": {
+      "get": {
+        "summary": "flights list endpoint",
+        "tags": [
+          "api"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "preferences",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "minDuration",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "in": "query",
+            "name": "maxDuration",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "in": "query",
+            "name": "maxDistance",
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/health"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "400": {
+        "description": "Bad Request",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/4xx5xxRes"
+            },
+            "example": {
+              "status": "fail",
+              "message": "Bad Request",
+              "data": "{}",
+              "error": "{}"
+            }
+          }
+        }
+      },
+      "404": {
+        "description": "Not Found",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/4xx5xxRes"
+            },
+            "example": {
+              "header": {
+                "status": "fail",
+                "message": "Not Found"
+              },
+              "body": {
+                "data": "{}",
+                "error": "{}"
+              }
+            }
+          }
+        }
+      },
+      "500": {
+        "description": "Internal Server Error",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/4xx5xxRes"
+            },
+            "example": {
+              "header": {
+                "status": "error",
+                "message": "Internal Server Error"
+              },
+              "body": {
+                "data": "{}",
+                "error": "{}"
+              }
+            }
+          }
+        }
+      },
+      "health": {
+        "description": "Information about status, start date, tags",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/HealthRes"
+            },
+            "example": {
+              "status": "OK",
+              "date": "00:00:00 PM 1/1/2020"
+            }
+          }
+        }
+      },
+      "flights": {
+        "description": "all flights sorted by best match",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/FlightsRes"
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "4xx5xxRes": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "default": "error"
+          },
+          "message": {
+            "type": "string"
+          },
+          "error": {
+            "type": "object"
+          }
+        }
+      },
+      "HealthRes": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "default": "OK"
+          },
+          "tags": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string"
+          }
+        }
+      },
+      "FlightsRes": {
+        "type": "object",
+        "properties": {
+          "List": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+              }
+            },
+            "example": {
+              "value": null
+            }
+          }
+        }
+      }
+    },
+    "parameters": {
+      "Content-Type": {
+        "name": "Content-Type",
+        "in": "header",
+        "required": true,
+        "style": "simple",
+        "explode": false,
+        "schema": {
+          "type": "string",
+          "example": "application/json"
+        }
+      },
+      "Accept": {
+        "name": "Accept",
+        "in": "header",
+        "style": "simple",
+        "explode": false,
+        "schema": {
+          "type": "string",
+          "example": "application/json"
+        }
+      }
+    }
+  }
+}
