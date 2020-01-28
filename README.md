@@ -90,9 +90,5 @@ Open in your browser:
 - [Express](https://github.com/expressjs/express) (v4.15.2) - Web framework for Node
   [![Build Status](https://travis-ci.org/expressjs/express.svg?branch=4.15.2)](https://travis-ci.org/expressjs/express)
   [![Coverage Status](https://coveralls.io/repos/github/expressjs/express/badge.svg?branch=4.15.2)](https://coveralls.io/github/expressjs/express?branch=4.15.2)
-- [Bunyan](https://github.com/trentm/node-bunyan) (v1.8.12) - Logger
-  [![Build Status](https://travis-ci.org/trentm/node-bunyan.svg?branch=1.8.12)](https://travis-ci.org/trentm/node-bunyan)
-- [Express-bunyan-logger](https://github.com/villadora/express-bunyan-logger) (v1.3.3) - HTTP logger
-  [![Build Status](https://travis-ci.org/villadora/express-bunyan-logger.svg?branch=v1.3.3)](https://travis-ci.org/villadora/express-bunyan-logger)
 - [Jest](https://github.com/facebook/jest) (v22.4.3) - Test framework
   [![Build Status](https://travis-ci.org/facebook/jest.svg?branch=master)](https://travis-ci.org/facebook/jest)
