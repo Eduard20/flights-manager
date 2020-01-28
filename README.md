@@ -27,7 +27,6 @@
 │   └── utils                          # Utilities/helpers directory
 ├── typings                            # Custom typescript @types
 ├── swagger.json                       # Swagger specification file
-├── Dockerfile                         # Docker configuration file
 ├── docker-compose.yml                 # Docker configuration file
 └── package.json                       # Dependencies
 ```
