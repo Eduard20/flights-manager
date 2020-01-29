@@ -4,8 +4,8 @@
 
 1.  Source code of route handlers located in `./src/routes/index.ts`
 1.  Adding of endpoint routes occurs in `./src/routes/api/**/*.ts`
-1.  Swagger specification of micro-service located in `./swagger.json`
-1.  Tests of micro-service located in `*.spec.ts` and `*.test.ts`
+1.  Swagger specification of service located in `./swagger.json`
+1.  Tests of service located in `*.spec.ts` and `*.test.ts`
 
 #### Directory Layout
 
