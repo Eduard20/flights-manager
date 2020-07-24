@@ -47,7 +47,6 @@
     "tedious": "5.0.3"
   },
   "devDependencies": {
-    "@types/sequelize": "4.28.1",
     "@types/body-parser": "1.17.0",
     "@types/bunyan": "1.8.5",
     "@types/dotenv": "6.1.0",
@@ -57,6 +56,7 @@
     "@types/jest": "24.0.13",
     "@types/joi": "14.0.1",
     "@types/node": "10.12.14",
+    "@types/sequelize": "4.28.1",
     "@types/supertest": "2.0.7",
     "@types/validator": "10.11.3",
     "bunyan-format": "0.2.1",
