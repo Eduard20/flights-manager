@@ -64,7 +64,7 @@
     "jest": "24.8.0",
     "joi-to-swagger": "3.1.0",
     "lint-staged": "8.1.0",
-    "merge-deep": "3.0.2",
+    "merge-deep": "3.0.3",
     "node-mocks-http": "1.7.3",
     "nodemon": "1.18.8",
     "prettier": "1.15.3",
